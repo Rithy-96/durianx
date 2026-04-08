@@ -36,7 +36,7 @@
               to="/offers"
               class="px-5 py-2.5 text-gray-700 hover:text-orange-600 font-semibold text-base transition-all duration-300 rounded-2xl hover:bg-orange-50"
             >
-              Offers
+              Offers hjhjhj
             </NuxtLink>
             <NuxtLink
               to="/contact"
