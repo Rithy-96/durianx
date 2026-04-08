@@ -39,7 +39,7 @@
               hot to your doorstep.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button
+              <NuxtLink to="/orders"
                 class="group px-8 py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 Order Now
@@ -56,12 +56,13 @@
                     d="M13 7l5 5m0 0l-5 5m5-5H6"
                   />
                 </svg>
-              </button>
-              <button
+              </NuxtLink>
+              <NuxtLink
+                to="/video"
                 class="px-8 py-4 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700 rounded-full font-semibold text-lg hover:bg-white hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
               >
                 Watch Video
-              </button>
+              </NuxtLink>
             </div>
             <div class="flex items-center gap-6 justify-center lg:justify-start pt-4">
               <div class="flex -space-x-2">
@@ -157,9 +158,7 @@
               </p>
               <div class="flex justify-between items-center">
                 <span class="text-2xl font-bold text-orange-600">$12.99</span>
-                <nuxt-link to="/dishes/1" class="text-orange-500 hover:text-orange-600 font-semibold">
-                  View Details
-                </nuxt-link>
+                <nuxt-link to=""></nuxt-link>
                 <button
                   class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                 >
