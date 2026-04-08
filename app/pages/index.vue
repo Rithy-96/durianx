@@ -157,6 +157,9 @@
               </p>
               <div class="flex justify-between items-center">
                 <span class="text-2xl font-bold text-orange-600">$12.99</span>
+                <nuxt-link to="/dishes/1" class="text-orange-500 hover:text-orange-600 font-semibold">
+                  View Details
+                </nuxt-link>
                 <button
                   class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                 >

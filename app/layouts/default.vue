@@ -49,12 +49,12 @@
           <!-- CTA Button -->
           
           <div class="hidden md:block">
-            <button
+            <NuxtLink to="/orders"
               class="px-8 py-3 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-semibold text-base rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-px active:scale-[0.97] transition-all duration-300 flex items-center gap-x-2"
             >
               Order Now
               <span class="text-lg leading-none">→</span>
-            </button>
+            </NuxtLink>
           </div>
 
           <!-- Mobile Menu Button -->
