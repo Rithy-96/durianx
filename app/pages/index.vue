@@ -1,7 +1,5 @@
 <template>
   <div class="min-h-screen bg-white">
-    
-
     <!-- Hero Section with Parallax Effect -->
     <section
       class="relative overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-rose-50"
@@ -39,7 +37,8 @@
               hot to your doorstep.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button
+              <nuxt-link
+                to="/orders"
                 class="group px-8 py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 Order Now
@@ -56,12 +55,13 @@
                     d="M13 7l5 5m0 0l-5 5m5-5H6"
                   />
                 </svg>
-              </button>
-              <button
+              </nuxt-link>
+              <NuxtLink
+                to="/video"
                 class="px-8 py-4 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700 rounded-full font-semibold text-lg hover:bg-white hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
               >
                 Watch Video
-              </button>
+              </NuxtLink>
             </div>
             <div class="flex items-center gap-6 justify-center lg:justify-start pt-4">
               <div class="flex -space-x-2">
@@ -399,8 +399,6 @@
         </div>
       </div>
     </section>
-
-    
   </div>
 </template>
 
@@ -408,7 +406,7 @@
 // Page meta for SEO
 definePageMeta({
   layout: "default",
-})
+});
 useHead({
   title: "Foodie - Taste the Magic of Fresh Food",
   meta: [
