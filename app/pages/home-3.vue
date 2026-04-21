@@ -1,15 +1,15 @@
 <template>
   <div class="min-h-screen bg-white">
-    <!-- Hero Section with Parallax Effect -->
+    <!-- Hero Section with Parallax Effect - Green Theme -->
     <section
-      class="relative overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-rose-50"
+      class="relative overflow-hidden bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50"
     >
       <div class="absolute inset-0 opacity-30">
         <div
-          class="absolute top-20 left-10 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"
+          class="absolute top-20 left-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"
         ></div>
         <div
-          class="absolute bottom-20 right-10 w-72 h-72 bg-rose-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"
+          class="absolute bottom-20 right-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"
         ></div>
       </div>
 
@@ -18,16 +18,16 @@
           <!-- Hero Text Content -->
           <div class="text-center lg:text-left space-y-6 animate-fade-in-up">
             <div
-              class="inline-block px-4 py-1.5 bg-orange-100 rounded-full text-orange-700 text-sm font-semibold mb-4"
+              class="inline-block px-4 py-1.5 bg-green-200 rounded-full text-green-700 text-sm font-semibold mb-4"
             >
-              🔥 20% OFF First Order
+              🌿 20% OFF First Order
             </div>
             <h1
               class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-800"
             >
               Taste the
               <span
-                class="bg-gradient-to-r from-orange-500 to-rose-500 bg-clip-text text-transparent"
+                class="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent"
                 >Magic</span
               >
               <br />of Fresh Food
@@ -39,7 +39,7 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <nuxt-link
                 to="/orders"
-                class="group px-8 py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+                class="group px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 Order Now
                 <svg
@@ -91,7 +91,7 @@
           <div class="relative flex justify-center lg:justify-end animate-float">
             <div class="relative w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
               <div
-                class="absolute inset-0 bg-gradient-to-tr from-orange-200 to-rose-200 rounded-full opacity-30 blur-2xl"
+                class="absolute inset-0 bg-gradient-to-tr from-green-200 to-emerald-200 rounded-full opacity-30 blur-2xl"
               ></div>
               <img
                 src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=800&fit=crop"
@@ -118,25 +118,53 @@
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 space-y-4">
-          <span class="text-orange-500 font-semibold tracking-wide uppercase"
+          <span class="text-green-600 font-semibold tracking-wide uppercase"
             >Signature Dishes</span
           >
           <h2 class="text-4xl md:text-5xl font-bold text-gray-800">
             Our Featured
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-500"
+              class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500"
               >Delicacies</span
             >
           </h2>
           <p class="text-gray-500 max-w-2xl mx-auto">
             Crafted by world-class chefs using authentic recipes and freshest ingredients
           </p>
+
+          <!-- Play Animation Transaction Button - Green Theme -->
+          <div class="flex justify-center mt-6">
+            <button
+              @click="playStyleTransaction"
+              :disabled="isAnimating"
+              class="group relative px-8 py-3 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 overflow-hidden"
+            >
+              <span class="relative z-10 flex items-center gap-2">
+                <svg 
+                  class="w-5 h-5 transition-transform duration-300 group-hover:rotate-180" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Play Style Animation Transaction
+              </span>
+              <div class="absolute inset-0 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+          </div>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Dish Card 1 -->
           <div
-            class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3"
+            ref="dishCards"
+            :class="[
+              'group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3',
+              { 'animate-style-transaction': isAnimating }
+            ]"
+            data-card-index="0"
           >
             <div class="relative overflow-hidden h-56">
               <img
@@ -145,7 +173,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div
-                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-orange-600 shadow-md"
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-green-600 shadow-md"
               >
                 ★ 4.9
               </div>
@@ -156,9 +184,9 @@
                 Juicy beef patty with melted cheddar, fresh lettuce, and special sauce
               </p>
               <div class="flex justify-between items-center">
-                <span class="text-2xl font-bold text-orange-600">$12.99</span>
+                <span class="text-2xl font-bold text-green-600">$12.99</span>
                 <button
-                  class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                  class="px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                 >
                   Order
                 </button>
@@ -168,7 +196,12 @@
 
           <!-- Dish Card 2 -->
           <div
-            class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3"
+            ref="dishCards"
+            :class="[
+              'group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3',
+              { 'animate-style-transaction': isAnimating }
+            ]"
+            data-card-index="1"
           >
             <div class="relative overflow-hidden h-56">
               <img
@@ -177,7 +210,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div
-                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-orange-600 shadow-md"
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-green-600 shadow-md"
               >
                 ★ 4.8
               </div>
@@ -188,9 +221,9 @@
                 Wood-fired crust, fresh mozzarella, basil, and tomato sauce
               </p>
               <div class="flex justify-between items-center">
-                <span class="text-2xl font-bold text-orange-600">$16.49</span>
+                <span class="text-2xl font-bold text-green-600">$16.49</span>
                 <button
-                  class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                  class="px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                 >
                   Order
                 </button>
@@ -200,7 +233,12 @@
 
           <!-- Dish Card 3 -->
           <div
-            class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3"
+            ref="dishCards"
+            :class="[
+              'group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3',
+              { 'animate-style-transaction': isAnimating }
+            ]"
+            data-card-index="2"
           >
             <div class="relative overflow-hidden h-56">
               <img
@@ -209,7 +247,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div
-                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-orange-600 shadow-md"
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-green-600 shadow-md"
               >
                 ★ 4.9
               </div>
@@ -220,9 +258,9 @@
                 Fresh salmon, avocado, cucumber, and sesame seeds
               </p>
               <div class="flex justify-between items-center">
-                <span class="text-2xl font-bold text-orange-600">$21.99</span>
+                <span class="text-2xl font-bold text-green-600">$21.99</span>
                 <button
-                  class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                  class="px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                 >
                   Order
                 </button>
@@ -232,7 +270,12 @@
 
           <!-- Dish Card 4 -->
           <div
-            class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3"
+            ref="dishCards"
+            :class="[
+              'group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3',
+              { 'animate-style-transaction': isAnimating }
+            ]"
+            data-card-index="3"
           >
             <div class="relative overflow-hidden h-56">
               <img
@@ -241,7 +284,7 @@
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div
-                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-orange-600 shadow-md"
+                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-green-600 shadow-md"
               >
                 ★ 4.7
               </div>
@@ -252,9 +295,9 @@
                 Fettuccine in rich parmesan cream sauce with grilled chicken
               </p>
               <div class="flex justify-between items-center">
-                <span class="text-2xl font-bold text-orange-600">$14.99</span>
+                <span class="text-2xl font-bold text-green-600">$14.99</span>
                 <button
-                  class="px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                  class="px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
                 >
                   Order
                 </button>
@@ -265,9 +308,9 @@
       </div>
     </section>
 
-    <!-- Special Offer Banner with Glow Effect -->
+    <!-- Special Offer Banner with Glow Effect - Green Theme -->
     <section
-      class="py-16 bg-gradient-to-r from-orange-600 to-rose-600 mx-4 sm:mx-6 lg:mx-8 rounded-3xl shadow-2xl relative overflow-hidden group"
+      class="py-16 bg-gradient-to-r from-green-600 to-emerald-600 mx-4 sm:mx-6 lg:mx-8 rounded-3xl shadow-2xl relative overflow-hidden group"
     >
       <div
         class="absolute inset-0 bg-white/10 transform -skew-y-6 group-hover:skew-y-0 transition-transform duration-700"
@@ -276,12 +319,12 @@
         <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
           Weekend Special Offer
         </h2>
-        <p class="text-orange-100 text-xl mb-6">
+        <p class="text-green-100 text-xl mb-6">
           Get 30% off on all orders above $25. Use code:
           <span class="font-mono bg-white/20 px-3 py-1 rounded-full">FOODIE30</span>
         </p>
         <button
-          class="px-8 py-3 bg-white text-orange-600 rounded-full font-bold text-lg hover:bg-orange-50 transform hover:scale-105 transition-all duration-300 shadow-xl"
+          class="px-8 py-3 bg-white text-green-600 rounded-full font-bold text-lg hover:bg-green-50 transform hover:scale-105 transition-all duration-300 shadow-xl"
         >
           Grab Deal Now
         </button>
@@ -292,13 +335,13 @@
     <section class="py-20 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <span class="text-orange-500 font-semibold uppercase tracking-wide"
+          <span class="text-green-600 font-semibold uppercase tracking-wide"
             >Testimonials</span
           >
           <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-2">
             What Our
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-500"
+              class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500"
               >Customers Say</span
             >
           </h2>
@@ -371,11 +414,11 @@
       </div>
     </section>
 
-    <!-- Newsletter Section -->
+    <!-- Newsletter Section - Green Theme -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div
-          class="bg-gradient-to-br from-orange-50 to-rose-50 rounded-3xl p-8 md:p-12 text-center shadow-xl"
+          class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12 text-center shadow-xl"
         >
           <h3 class="text-3xl font-bold text-gray-800 mb-3">
             Subscribe to Our Newsletter
@@ -388,10 +431,10 @@
             <input
               type="email"
               placeholder="Enter your email address"
-              class="flex-1 px-6 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+              class="flex-1 px-6 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             />
             <button
-              class="px-8 py-3 bg-gradient-to-r from-orange-500 to-rose-500 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              class="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
             >
               Subscribe
             </button>
@@ -403,10 +446,13 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+
 // Page meta for SEO
 definePageMeta({
   layout: "default",
 });
+
 useHead({
   title: "Foodie - Taste the Magic of Fresh Food",
   meta: [
@@ -417,9 +463,29 @@ useHead({
     },
   ],
 });
+
+// Animation Transaction State
+const dishCards = ref([]);
+const isAnimating = ref(false);
+
+// Play Style Animation Transaction Function
+const playStyleTransaction = async () => {
+  if (isAnimating.value) return;
+  
+  isAnimating.value = true;
+  
+  setTimeout(() => {
+    isAnimating.value = false;
+  }, 800);
+};
+
+onMounted(() => {
+  console.log('Green-themed page ready - Tailwind CSS v4');
+});
 </script>
 
 <style scoped>
+/* Base Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -451,6 +517,110 @@ useHead({
   }
 }
 
+/* Tailwind CSS v4 Style Animation Transaction - Green Theme */
+@keyframes styleTransaction {
+  0% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-radius: 1rem;
+    filter: brightness(1) saturate(1);
+  }
+  25% {
+    transform: scale(0.98) rotate(-1deg);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border-radius: 1.5rem;
+    filter: brightness(1.05) saturate(1.2);
+  }
+  50% {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 0 25px 30px -12px rgb(34 197 94 / 0.3);
+    border-radius: 1rem;
+    filter: brightness(1.1) saturate(1.3);
+    background: linear-gradient(135deg, rgba(220,252,231,0.5), rgba(209,250,229,0.5));
+  }
+  75% {
+    transform: scale(0.99) rotate(-0.5deg);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+    border-radius: 1.25rem;
+    filter: brightness(1.02) saturate(1.1);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    border-radius: 1rem;
+    filter: brightness(1) saturate(1);
+  }
+}
+
+/* Color Morphing - Green Theme */
+@keyframes colorMorph {
+  0% {
+    border-color: transparent;
+    background-color: white;
+  }
+  25% {
+    border-color: rgb(34 197 94 / 0.3);
+    background-color: rgb(240 253 244);
+  }
+  50% {
+    border-color: rgb(16 185 129 / 0.4);
+    background-color: rgb(236 253 245);
+    background-image: radial-gradient(circle at 10% 20%, rgba(34,197,94,0.05) 0%, rgba(16,185,129,0.05) 100%);
+  }
+  75% {
+    border-color: rgb(34 197 94 / 0.3);
+    background-color: rgb(240 253 244);
+  }
+  100% {
+    border-color: transparent;
+    background-color: white;
+  }
+}
+
+.animate-style-transaction {
+  animation: 
+    styleTransaction 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    colorMorph 0.8s ease-in-out forwards;
+  will-change: transform, box-shadow, border-radius, filter, background;
+  position: relative;
+  z-index: 10;
+}
+
+/* Glow effect during transaction - Green Theme */
+.animate-style-transaction::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #22c55e, #10b981, #14b8a6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  animation: borderGlow 0.8s ease-in-out forwards;
+  pointer-events: none;
+}
+
+@keyframes borderGlow {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -469,5 +639,13 @@ useHead({
 
 .delay-1000 {
   animation-delay: 1000ms;
+}
+
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
