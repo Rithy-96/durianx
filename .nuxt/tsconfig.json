@@ -136,7 +136,9 @@
     ],
     "jsx": "preserve",
     "jsxImportSource": "vue",
-    "types": [],
+    "types": [
+      "unplugin-icons/types/vue"
+    ],
     "moduleResolution": "Bundler",
     "useDefineForClassFields": true,
     "noImplicitThis": true,
@@ -172,6 +174,7 @@
     "../node_modules",
     "../node_modules/nuxt/node_modules",
     "../node_modules/@pinia/nuxt/node_modules",
+    "../node_modules/unplugin-icons/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
