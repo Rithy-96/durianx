@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
 
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt', 'unplugin-icons/nuxt'],
   ssr: false, // disable SSR (important for GitHub Pages)
   app: {
     baseURL: '/durianx/', // VERY IMPORTANT
